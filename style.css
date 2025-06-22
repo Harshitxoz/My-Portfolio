@@ -85,11 +85,16 @@ nav ul li a:hover::after{
 }
 .about-col-2{
     flex-basis: 60%;
+    #aboutme{
+    margin-bottom: 2rem;
 }
+}
+
 .sub-title{
     font-size: 60px;
     font-weight: 600;
     color: #fff;
+    margin-bottom: 1rem;
 }
 .tab-titles{
     display: flex;
