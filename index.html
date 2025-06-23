@@ -56,7 +56,7 @@
                         <div class="tab-contents" id="education">
                             <ul>
                                 <li><span>2023 - 2026</span><br>BCA from Graphic Era Hill University, Bhimtal &nbsp;<span>7.75 SGPA</span></li>
-                                <li><span>2022 - 2023</span><br>12th from Sanwal Public School &nbsp; <span>59.8%</span></li>
+                                <li><span>2022 - 2023</span><br>12th from Sanwal Public School &nbsp; <span>65.8%</span></li>
                             </ul>
                         </div>
                         <div class="tab-contents" id="experience">
@@ -162,37 +162,23 @@
         </div>
     </footer>
 
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxv1AjLPlh7qbf9seupKfLZwqHKtxsr1seqwbIERUJh60XHiUKp-uMggvLQrqHg3r8lMg/exec';
-        const form = document.forms['submit-to-google-sheet'];
-        const msg = document.getElementById("msg");
-
-        
-
-        form.addEventListener('submit', e => {
-            e.preventDefault(); // Prevent default form submission
-            console.log("Form data:", new FormData(form)); // Log form data
-
-            for (let pair of formData.entries()) {
-        console.log(pair[0] + ': ' + pair[1]);
-    }
-            fetch(scriptURL, {
-                method: 'POST',
-                body: new FormData(form) // Send form data
-            })
-            .then(response => {
-                console.log('Response received:', response); // Log response
-                msg.innerHTML = "Message sent successfully!";
-                setTimeout(() => msg.innerHTML = "", 3000);
-                form.reset(); // Clear form
-            })
-            .catch(error => {
-                console.error('Error:', error.message); // Log errors
-                msg.innerHTML = "Error sending message!";
-            });
-        });
-
-
-      </script>
+   <script>
+			const scriptURL =
+				"https://script.google.com/macros/s/AKfycbxv1AjLPlh7qbf9seupKfLZwqHKtxsr1seqwbIERUJh60XHiUKp-uMggvLQrqHg3r8lMg/exec";
+			const form = document.forms["submit-to-google-sheet"];
+			const msg = document.getElementById("msg");
+			form.addEventListener("submit", (e) => {
+				e.preventDefault();
+				fetch(scriptURL, { method: "POST", body: new FormData(form) })
+					.then((response) => {
+						msg.innerHTML = "Message sent successfully!!";
+						setTimeout(function () {
+							msg.innerHTML = "";
+						}, 3000);
+						form.reset();
+					})
+					.catch((error) => console.error("Error!", error.message));
+			});
+		</script>
 </body>
 </html>
